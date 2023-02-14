@@ -3,6 +3,7 @@ using UnityEngine;
 public class AIRandomizer : MonoBehaviour
 {
     private AnyCarAI _car;
+    private float _minValueDevisor = 2f;
 
     private void Awake()
     {
@@ -21,5 +22,5 @@ public class AIRandomizer : MonoBehaviour
         _car.brakeCondition = (BrakeCondition)Random.Range(0f, 3f);
     }
 
-    private float GetRandomValue(float value) => Random.Range((value / 2f), value);
+    private float GetRandomValue(float value) => Random.Range((value / _minValueDevisor), value);
 }
